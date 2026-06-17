@@ -1,36 +1,32 @@
 pipeline {
 
-```
-agent any
+    agent any
 
-stages {
+    stages {
 
-    stage('Git Version') {
-        steps {
-            sh 'git --version'
+        stage('Git Version') {
+            steps {
+                sh 'git --version'
+            }
         }
-    }
 
-    stage('Docker Version') {
-        steps {
-            sh 'docker --version'
+        stage('Docker Version') {
+            steps {
+                sh 'docker --version'
+            }
         }
-    }
 
-    stage('Build Docker Image') {
-        steps {
-            sh 'docker build -t srinivasps/flask-app:latest .'
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t srinivasps/flask-app:latest .'
+            }
         }
-    }
 
-    stage('List Images') {
-        steps {
-            sh 'docker images'
+        stage('List Images') {
+            steps {
+                sh 'docker images'
+            }
         }
-    }
 
+    }
 }
-```
-
-}
-
